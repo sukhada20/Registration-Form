@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Feedback Registration Form</title>
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Internal CSS as per instructions -->
+    <style>
+        .internal-css-demo {
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2 class="internal-css-demo">Student Feedback Registration Form</h2>
+    
+    <div id="error-message" class="error-box" style="display: none;"></div>
+    <div id="success-message" class="success-box" style="display: none;">Feedback submitted successfully!</div>
+
+    <form id="feedbackForm" onsubmit="return validateForm(event)">
+        <!-- Student Name -->
+        <div class="input-group">
+            <label for="studentName">Student Name *</label>
+            <input type="text" id="studentName" name="studentName" placeholder="Enter full name">
+        </div>
+
+        <!-- Email ID -->
+        <div class="input-group">
+            <label for="email">Email ID *</label>
+            <input type="text" id="email" name="email" placeholder="student@example.com">
+        </div>
+
+        <!-- Mobile Number -->
+        <div class="input-group">
+            <label for="mobile">Mobile Number *</label>
+            <input type="text" id="mobile" name="mobile" placeholder="10-digit number">
+        </div>
+
+        <!-- Department -->
+        <div class="input-group">
+            <label for="department">Department *</label>
+            <select id="department" name="department">
+                <option value="">-- Select Department --</option>
+                <option value="Computer Science">Computer Science</option>
+                <option value="Information Technology">Information Technology</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Mechanical">Mechanical</option>
+            </select>
+        </div>
+
+        <!-- Gender -->
+        <div class="input-group">
+            <label>Gender *</label>
+            <div class="radio-group">
+                <input type="radio" id="male" name="gender" value="Male">
+                <label for="male">Male</label>
+                
+                <input type="radio" id="female" name="gender" value="Female">
+                <label for="female">Female</label>
+                
+                <input type="radio" id="other" name="gender" value="Other">
+                <label for="other">Other</label>
+            </div>
+        </div>
+
+        <!-- Feedback Comments -->
+        <div class="input-group">
+            <label for="comments">Feedback Comments (Minimum 10 words) *</label>
+            <textarea id="comments" name="comments" rows="5" placeholder="Enter your feedback here..."></textarea>
+        </div>
+
+        <!-- Buttons -->
+        <div class="button-group">
+            <button type="submit" id="submitBtn">Submit</button>
+            <button type="reset" id="resetBtn" onclick="resetMessages()">Reset</button>
+        </div>
+    </form>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
